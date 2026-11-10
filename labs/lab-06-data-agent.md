@@ -37,8 +37,6 @@ agent instructions* and *Data agent test questions*).
    > underlying items: `BikeOpsLakehouse` and `BikeOpsEventhouse`. The agent will generate SQL against the first and
    > KQL against the second, using your permissions on each.
 
-   *Adapted from: [Use Ontology as context in Fabric data agent](https://learn.microsoft.com/fabric/data-science/data-agent-ontology-sources)*
-
 ### Part B — Instructions (3 min)
 
 4. **Click** **Agent instructions** in the ribbon and **paste** the *Data agent instructions* block from

@@ -70,8 +70,6 @@ you teach Fabric to think the same way.
      names on purpose.
    </details>
 
-   *Adapted from: [Ontology tutorial part 0: Prepare the lakehouse](https://learn.microsoft.com/fabric/iq/ontology/tutorial-0-introduction#prepare-the-lakehouse)*
-
 ### Part B — Readings in an Eventhouse (7 min)
 
 4. **Go back** to the workspace, **click** **+ New item**, **select** **Eventhouse**, **type**

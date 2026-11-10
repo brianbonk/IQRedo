@@ -50,8 +50,6 @@ Everything except `StationReading` comes from the Lakehouse. (Same picture, draw
    on. Tell the facilitator; see [`docs/prerequisites.md`](../docs/prerequisites.md).
    </details>
 
-   *Adapted from: [Ontology tutorial part 1: Create an ontology](https://learn.microsoft.com/fabric/iq/ontology/tutorial-1-create-ontology)*
-
 ### Part B — The first entity type, step by step: `Station` (6 min)
 
 2. From the top ribbon, **click** **+ Add entity type**. **Type** `Station` and **click** **Add Entity Type**.
@@ -115,8 +113,6 @@ Everything except `StationReading` comes from the Lakehouse. (Same picture, draw
     > 💡 **Nothing was copied.** `Station` reads from the Lakehouse, `StationReading` from the Eventhouse, at
     > query time. When a new reading lands in `StationReadings`, the ontology agent and the data agent see it on
     > their next query. (The materialized *graph* in Lab 04 is the exception: it's a snapshot you refresh.)
-
-    *Adapted from: [Data binding in ontology](https://learn.microsoft.com/fabric/iq/ontology/how-to-bind-data)*
 
 ### Part E — Relationship types (6 min)
 

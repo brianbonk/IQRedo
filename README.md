@@ -118,5 +118,4 @@ Agents and graphs keep using capacity until you stop or delete them.
 
 Builds on the scenario of the RTI Express labs in
 [SQLClause/FabConBCNRTI-workshop](https://github.com/SQLClause/FabConBCNRTI-workshop). Lab structure follows
-Microsoft's [ontology tutorial](https://learn.microsoft.com/fabric/iq/ontology/tutorial-0-introduction); each lab
-links the pages it adapts. All data is synthetic. Licensed under Apache 2.0.
+Microsoft's [ontology tutorial](https://learn.microsoft.com/fabric/iq/ontology/tutorial-0-introduction). All data is synthetic. Licensed under Apache 2.0.

@@ -44,8 +44,6 @@
      the facilitator's screen for Part C.
    </details>
 
-   *Adapted from: [Materialize a graph from an ontology](https://learn.microsoft.com/fabric/iq/ontology/how-to-use-ontology-graph)*
-
 ### Part B — Instances while you wait (4 min)
 
 4. **Select** `Van` on the canvas → **View Entity Type details** → **Instances** tab.

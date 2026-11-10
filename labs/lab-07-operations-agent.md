@@ -49,8 +49,6 @@
      identity.
    </details>
 
-   *Adapted from: [Create an operations agent grounded in an ontology](https://learn.microsoft.com/fabric/iq/ontology/how-to-create-operations-agent)*
-
 4. **Install** the **Fabric Operations Agent** app in Microsoft Teams (Teams → **Apps** → search *Fabric Operations
    Agent* → **Add**). The agent can only reach you once the app is installed.
 

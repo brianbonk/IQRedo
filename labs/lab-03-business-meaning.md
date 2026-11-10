@@ -38,8 +38,6 @@ tab (sections *Entity type metadata*, *Property metadata*, *Relationship metadat
 
    > ✅ Expected result: each entity type's **Configure** page shows a description; five of them show synonyms.
 
-   *Adapted from: [Ontology tutorial part 2: Add metadata](https://learn.microsoft.com/fabric/iq/ontology/tutorial-2-enrich-ontology#add-metadata)*
-
 ### Part B — Property and relationship descriptions (3 min)
 
 4. **…** next to `StationReading` → **Bind data** → **Entity type properties**. Next to `No_Bikes`, **click**
@@ -80,8 +78,6 @@ tab (sections *Entity type metadata*, *Property metadata*, *Relationship metadat
    > answers ("which stations need rebalancing?"). Lab 07 shows an operations agent that *watches* the data and
    > acts on the same language. Compare with the RTI Activator rule *"No_Bikes < 1 for 5 minutes"*: same idea, but
    > that one knew nothing about tiers, crews or vans.
-
-   *Adapted from: [Ontology tutorial part 2: Add rules](https://learn.microsoft.com/fabric/iq/ontology/tutorial-2-enrich-ontology#add-rules)*
 
 <details>
 <summary>Troubleshooting</summary>

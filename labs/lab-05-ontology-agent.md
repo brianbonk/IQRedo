@@ -35,8 +35,6 @@
    > Lakehouse tables). *Full right now*: 13 stations in Bankside, Canary Wharf and Holborn (a **KQL** query over
    > `StationReadings`). The agent picks the engine from the binding: you never told it where the readings live.
 
-   *Adapted from: [Ontology tutorial part 4: Use the ontology agent](https://learn.microsoft.com/fabric/iq/ontology/tutorial-4-use-agent)*
-
 ### Part B — The hero question (4 min)
 
 3. **Send** the hero question:
@@ -102,8 +100,6 @@ keeps a separate list of maintenance tickets. Two of your "available" vans have 
 
    > ✅ Expected result: the agent reports what it applied, and `VanMaintenanceTicket` appears on the canvas,
    > connected to `Van` by `hasTicket`. **Switch back to Plan** straight away: it's the safe default.
-
-   *Adapted from: [Use the ontology agent: Plan mode and Act mode](https://learn.microsoft.com/fabric/iq/ontology/how-to-use-ontology-agent#plan-mode-and-act-mode)*
 
 8. **Send** the hero question again.
 
