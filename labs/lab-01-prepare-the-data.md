@@ -15,7 +15,7 @@ and the [`data/`](../data/) folder of this repository on your laptop.
 ## Before you begin
 
 - [ ] You have downloaded the data: on the repository's GitHub page, **click** **Code** → **Download ZIP**, unzip
-      it, and find the `data` folder. (Or download `IQRedo-data.zip` from the repository's **Releases**.)
+      it, and find the `data` folder.
 - [ ] The folder contains seven CSV files: `stations.csv`, `neighbourhoods.csv`, `crews.csv`, `depots.csv`,
       `vans.csv`, `van_maintenance.csv`, `station_readings.csv`.
 - [ ] Your workspace shows **+ New item**, and **Ontology (preview)** appears when you search for it there.

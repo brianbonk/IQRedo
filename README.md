@@ -55,8 +55,7 @@ Short version (details and the admin checklist in [`docs/prerequisites.md`](docs
   and EU.
 - Contributor (or higher) on the workspace.
 - Microsoft Teams on the same account (Lab 07).
-- The [`data/`](data/) folder on your laptop: **Code** → **Download ZIP** on this page, or `IQRedo-data.zip` from
-  the [Releases](../../releases).
+- The [`data/`](data/) folder on your laptop: **Code** → **Download ZIP** on this page, then unzip.
 - A modern browser. Nothing to install.
 
 ## Fixed names

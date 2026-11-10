@@ -44,7 +44,7 @@ Graph (Lab 04) must be available in the capacity's region:
 ## 4. On the attendee's laptop
 
 - A modern browser (Edge or Chrome), signed in to Fabric with the session account.
-- The `data` folder of this repository (GitHub **Code** → **Download ZIP**, or `IQRedo-data.zip` from Releases).
+- The `data` folder of this repository (GitHub **Code** → **Download ZIP**).
 - Nothing to install.
 
 ## 5. Quick self-test (attendee, 2 minutes)

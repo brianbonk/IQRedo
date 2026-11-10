@@ -111,7 +111,7 @@ finished canvas on screen.
 | Graph unavailable or slow | **Manage graph** missing, or materialization > 10 min | Lab 04 as demo. Nothing later depends on the graph. |
 | Data agent errors on every question | Run steps show source errors | Check the attendee can open both sources; wait 2–3 minutes after creation; **Refresh** the ontology context. Else demo. |
 | Operations agent not allowed (trial capacity, setting, Teams app blocked) | Item missing or Start fails | Demo with your recording. |
-| Venue network blocks GitHub downloads | Attendees can't get `data/` | Use the storage account mirror below, or USB sticks with `IQRedo-data.zip`. |
+| Venue network blocks GitHub downloads | Attendees can't get `data/` | Use the storage account mirror below, or USB sticks with the `data` folder. |
 | Capacity throttling | Spinners everywhere, Eventhouse queries slow | Have everyone stop their operations agent; skip stretch steps; pair people up. |
 
 ### Optional: a public storage account mirror for the data
