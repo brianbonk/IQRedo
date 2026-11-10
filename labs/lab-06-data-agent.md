@@ -1,8 +1,7 @@
 # Lab 06: A Data Agent on Top of the Ontology
 
 **Duration:** 15 minutes
-**Prerequisites:** Lab 05 complete. [`artifacts/agent-texts.md`](../artifacts/agent-texts.md) open (sections *Data
-agent instructions* and *Data agent test questions*).
+**Prerequisites:** Lab 05 complete. The instructions and questions are in this lab, ready to copy.
 
 **Learning objectives**
 - Create a **Fabric data agent** and add the **ontology as a context source**.
@@ -39,8 +38,19 @@ agent instructions* and *Data agent test questions*).
 
 ### Part B — Instructions (3 min)
 
-4. **Click** **Agent instructions** in the ribbon and **paste** the *Data agent instructions* block from
-   `agent-texts.md`.
+4. **Click** **Agent instructions** in the ribbon and **paste**:
+
+   ```text
+   You are the duty assistant in the control room of a city bike-share scheme.
+
+   - Answer in business terms: stations by StationName, crews by CrewName, vans by VanId and Registration.
+   - "Now", "currently" and "right now" mean the latest StationReading per station. Never sum readings over time when the question is about the current state.
+   - Apply the ontology's business rules (Empty station, Needs rebalancing, Responsible crew, Bikes needed, Dispatchable van) exactly as defined. Say which rule you applied.
+   - When you recommend a van, check that it is dispatchable. If a crew has no dispatchable van, say so clearly and suggest the nearest other crew's available van instead.
+   - If one van can't carry all the bikes needed, say how many trips it takes.
+   - Show results as a table first, then at most three sentences of explanation.
+   - Support group by in GQL.
+   ```
 
    > 💡 Read what's *in* the instructions and what isn't. They set conventions: names over IDs, "now" means the
    > latest reading, tables first, say which rule you applied. They don't define "empty", "Tier 1" or "dispatchable":
@@ -50,7 +60,11 @@ agent instructions* and *Data agent test questions*).
 
 ### Part C — Test it (6 min)
 
-5. In the chat pane, **ask** the hero question (from `agent-texts.md`).
+5. In the chat pane, **ask** the hero question:
+
+   ```text
+   Which Tier 1 neighbourhoods have stations that have been empty for more than 15 minutes? For each station, tell me how long it has been empty and how many bikes are needed. For each neighbourhood, name the responsible crew, its home depot, and which van can be dispatched.
+   ```
 
    > ✅ Expected result: the same facts as the ontology agent's second answer in Lab 05: Kings Cross (York Way,
    > Argyle Street, 32 bikes, North Loop, only V01 dispatchable, two trips) and Waterloo (Waterloo Road, Lower
@@ -70,9 +84,23 @@ agent instructions* and *Data agent test questions*).
 6. **Open** the **run steps** under the answer. **Find** the generated query for each source (SQL for the
    Lakehouse, KQL for `StationReadings`).
 
-7. **Ask** two or three of the *Data agent test questions*, for example:
-   - `How many bikes does North Loop need to bring out in total, and can one van do it in a single trip?`
-   - `Which depot should the van for Waterloo Road come from, and is there a van available there?`
+7. **Ask** two or three of these:
+
+   ```text
+   Which stations need rebalancing right now, and which crew is responsible for each?
+   ```
+   ```text
+   How many bikes does North Loop need to bring out in total, and can one van do it in a single trip?
+   ```
+   ```text
+   Which depot should the van for Waterloo Road come from, and is there a van available there?
+   ```
+   ```text
+   Compare the number of e-bikes available in Tier 1 and Tier 2 neighbourhoods right now.
+   ```
+
+   > ✅ Expected result: North Loop needs 32 bikes; V01 carries 20, so two trips. Waterloo Road's van would come
+   > from Waterloo Depot, but Night Owls have no dispatchable van (V09 has an open High ticket, V10 is InService).
 
 8. **Open** the ontology's **…** menu in the Explorer → **Download ontology context**, and **skim** the file.
 
@@ -101,7 +129,7 @@ agent instructions* and *Data agent test questions*).
 ## Checkpoint
 
 At the end of this lab:
-- Data agent **`BikeOpsDataAgent`** with `BikeOpsOntology` as its source and instructions from `agent-texts.md`
+- Data agent **`BikeOpsDataAgent`** with `BikeOpsOntology` as its source and the instructions from step 4
 - The hero question answered with maintenance tickets taken into account
 - You know where the run steps and the ontology context are
 

@@ -1,9 +1,8 @@
 # Lab 07: An Operations Agent That Watches
 
 **Duration:** 10 minutes
-**Prerequisites:** Labs 01–05 complete. Microsoft Teams on this account (desktop, web or phone).
-[`artifacts/agent-texts.md`](../artifacts/agent-texts.md) (section *Operations agent instructions*) and
-[`artifacts/BikeOpsEventhouse.kql`](../artifacts/BikeOpsEventhouse.kql) (K3, K6a, K6b, K7) open.
+**Prerequisites:** Labs 01–05 complete. Microsoft Teams on this account (desktop, web or phone). The agent
+instructions and the KQL are in this lab, ready to copy.
 
 **Learning objectives**
 - Create an **operations agent** with the ontology as its **knowledge**.
@@ -29,7 +28,18 @@
    `BikeOpsOperationsAgent`. **Click** **Create**.
 
 2. On **Agent setup**:
-   - **Agent instructions**: **paste** the *Operations agent instructions* block from `agent-texts.md`.
+   - **Agent instructions**: **paste**:
+
+     ```text
+     You monitor the bike-share network for the control room.
+
+     Goal: no station in the network stays empty for more than 10 minutes without the responsible crew being told.
+
+     - A station is empty when its latest StationReading has No_Bikes = 0.
+     - When a station has been empty for 10 minutes or more, message me with: the station name, its neighbourhood and its priority tier, how long it has been empty, the responsible crew and its home depot, how many bikes are needed (round(Capacity x 0.5) - No_Bikes), and a dispatchable van from that crew.
+     - Tier 1 neighbourhoods first.
+     - Don't message again about the same station until it has had bikes again.
+     ```
    - **Knowledge**: **click** **Add data** and **select** `BikeOpsOntology`.
    - **Actions**: leave empty. By default the agent messages you in Teams.
    - **Click** **Save**.
@@ -56,7 +66,42 @@
 
 ### Part B — Make something happen (4 min)
 
-6. In `BikeOpsEventhouse_queryset`, **run** **K3** (the data ends *now* again), then **K6a**, then **K6b**.
+6. In `BikeOpsEventhouse_queryset`, **run** these four blocks one at a time, in order. **K3** makes the data end
+   *now* again; **K6a** and **K6b** make Bayswater Road, Hyde Park (`BP-043`) empty for the last 12 minutes; **K7**
+   checks it.
+
+   **K3**
+   ```kql
+   .set-or-replace StationReadings <|
+       let shift = now() - toscalar(StationReadingsRaw | summarize max(todatetime(Timestamp)));
+       StationReadingsRaw
+       | project Timestamp = todatetime(Timestamp) + shift,
+                 BikepointID = tostring(BikepointID),
+                 No_Bikes = tolong(No_Bikes),
+                 No_EBikes = tolong(No_EBikes),
+                 No_Empty_Docks = tolong(No_Empty_Docks),
+                 Status = tostring(Status)
+   ```
+
+   **K6a**: remove BP-043's normal readings for the last 12 minutes
+   ```kql
+   .delete table StationReadings records <| StationReadings | where BikepointID == "BP-043" and Timestamp > ago(12m)
+   ```
+
+   **K6b**: add 12 one-minute "Empty" readings ending now
+   ```kql
+   .set-or-append StationReadings <|
+       range i from 0 to 11 step 1
+       | project Timestamp = now() - i * 1m, BikepointID = "BP-043", No_Bikes = long(0), No_EBikes = long(0),
+                 No_Empty_Docks = long(36), Status = "Empty"
+   ```
+
+   **K7**
+   ```kql
+   StationReadings
+   | where BikepointID == "BP-043"
+   | top 15 by Timestamp desc
+   ```
 
    > ✅ Expected result: **K7** shows `BP-043` with `No_Bikes` 0 and `Status` Empty for the last 12 minutes.
    > That's Bayswater Road, Hyde Park: a Tier 2 station, so not part of the hero answer, but well past the agent's

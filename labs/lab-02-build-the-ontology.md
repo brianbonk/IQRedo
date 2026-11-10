@@ -1,8 +1,7 @@
 # Lab 02: Build the Ontology by Hand
 
 **Duration:** 25 minutes
-**Prerequisites:** Lab 01 complete. Open [`artifacts/ontology-spec.md`](../artifacts/ontology-spec.md) in another
-tab: every name you type is in its tables.
+**Prerequisites:** Lab 01 complete. Every name you type is in the tables in this lab.
 
 **Learning objectives**
 - Create an **ontology (preview)** item and add **entity types**.

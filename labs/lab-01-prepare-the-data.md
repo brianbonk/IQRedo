@@ -91,13 +91,25 @@ you teach Fabric to think the same way.
    > ✅ Expected result: the database lists table `StationReadingsRaw` with roughly 13,000 rows.
 
 7. **Open** `BikeOpsEventhouse_queryset` from the workspace. **Check** that the database selector at the top says
-   `BikeOpsEventhouse`. **Open** [`artifacts/BikeOpsEventhouse.kql`](../artifacts/BikeOpsEventhouse.kql) in
-   another tab: you copy blocks K1–K5 from it.
+   `BikeOpsEventhouse`. The KQL blocks below are labelled K1–K5; copy them from here.
 
    > 💡 The editor runs **only the block your cursor is in**, where blocks are separated by blank lines. Paste a
    > block, run it, paste the next.
 
-8. **Run** **K1** and **K2**.
+8. **Run** **K1** (did the upload land?) and then **K2** (column types), as two separate blocks.
+
+   **K1**
+   ```kql
+   StationReadingsRaw
+   | summarize Rows = count(), Stations = dcount(BikepointID), Oldest = min(Timestamp), Newest = max(Timestamp)
+   ```
+
+   **K2**
+   ```kql
+   StationReadingsRaw
+   | getschema
+   | project ColumnName, ColumnType
+   ```
 
    > ✅ Expected result: K1 shows `Rows` 12960 and `Stations` 72. K2 lists `Timestamp` as `datetime` and the three
    > count columns as `long` or `int`.
@@ -105,6 +117,7 @@ you teach Fabric to think the same way.
 9. **Run** **K3**. It copies the readings into a new table `StationReadings` and shifts every timestamp so the
    newest reading is *now*.
 
+   **K3**
    ```kql
    .set-or-replace StationReadings <|
        let shift = now() - toscalar(StationReadingsRaw | summarize max(todatetime(Timestamp)));
@@ -121,11 +134,28 @@ you teach Fabric to think the same way.
    > *"right now"* and *"in the last 15 minutes"* against the clock, so the data has to end at the clock. This is
    > the only "trick" in the session: everything else is real Fabric behaviour.
 
-10. **Run** **K4**.
+10. **Run** **K4**: the current state of every station, counted by status.
+
+    **K4**
+    ```kql
+    StationReadings
+    | summarize arg_max(Timestamp, *) by BikepointID
+    | summarize Stations = count() by Status
+    ```
 
     > ✅ Expected result: four rows: **OK 43**, **Full 13**, **Low 11**, **Empty 5**.
 
-11. **Run** **K5** and **keep the result** (screenshot or leave the tab open).
+11. **Run** **K5** and **keep the result** (screenshot or leave the tab open). It lists the stations that are
+    empty now, and for how long.
+
+    **K5**
+    ```kql
+    StationReadings
+    | summarize LastNotEmpty = maxif(Timestamp, Status != "Empty"), arg_max(Timestamp, Status, No_Bikes) by BikepointID
+    | where Status == "Empty"
+    | extend EmptyMinutes = datetime_diff('minute', Timestamp, LastNotEmpty)
+    | order by EmptyMinutes desc
+    ```
 
     > ✅ Expected result: five stations, `EmptyMinutes` 38, 31, 24, 19 and 7. This is the KQL answer to the
     > question you'll ask the agents in Labs 05 and 06. Notice what K5 *can't* tell you: which of these matter
@@ -135,8 +165,8 @@ you teach Fabric to think the same way.
 
 12. Nothing to redo in the Lakehouse.
 
-13. **Run** **K3** again at the start of the session. It rebuilds `StationReadings` from the raw table so the data
-    ends *now* again. Then **run** **K4** to confirm the four statuses.
+13. **Run** **K3** (step 9) again at the start of the session. It rebuilds `StationReadings` from the raw table so
+    the data ends *now* again. Then **run** **K4** (step 10) to confirm the four statuses.
 
 <details>
 <summary>Troubleshooting</summary>

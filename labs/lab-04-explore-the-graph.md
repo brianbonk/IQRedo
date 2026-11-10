@@ -39,7 +39,8 @@
    <summary>Troubleshooting</summary>
 
    - **An entity shows "Ineligible: no key"**: open it → **View Entity Type details** → **Define entity type
-     key** (see the spec), save, and open **Manage graph** again.
+     key** (`Station` → `BikepointID`, `Neighbourhood` → `NeighbourhoodName`, `Crew` → `CrewId`,
+     `Depot` → `DepotName`, `Van` → `VanId`), save, and open **Manage graph** again.
    - **Manage graph isn't in the ribbon**: graph isn't available in your tenant or region. Do Part B, then watch
      the facilitator's screen for Part C.
    </details>

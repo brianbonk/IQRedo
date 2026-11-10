@@ -1,9 +1,8 @@
 # Lab 05: Ask, Then Extend, with the Ontology Agent
 
 **Duration:** 15 minutes
-**Prerequisites:** Labs 01–03 complete (Lab 04's graph is nice to have, not required).
-[`artifacts/agent-texts.md`](../artifacts/agent-texts.md) open in another tab, and `van_maintenance.csv` from the
-`data` folder at hand.
+**Prerequisites:** Labs 01–03 complete (Lab 04's graph is nice to have, not required), and `van_maintenance.csv`
+from the `data` folder at hand. Every question and request you send is in this lab, ready to copy.
 
 **Learning objectives**
 - Ask questions in natural language and **read the query** the agent ran (SQL, KQL or GQL).
@@ -15,7 +14,25 @@
 
 - [ ] The five business rules from Lab 03 are saved.
 - [ ] You have K5's result from Lab 01 (the stations that are empty, and for how long). If the session started
-      more than about an hour after you ran K3, run **K3** again now so the data ends *now*.
+      more than about an hour after you ran K3, run **K3** again now so the data ends *now* (in
+      `BikeOpsEventhouse_queryset`):
+
+  <details>
+  <summary>K3 (same block as Lab 01 step 9)</summary>
+
+  ```kql
+  .set-or-replace StationReadings <|
+      let shift = now() - toscalar(StationReadingsRaw | summarize max(todatetime(Timestamp)));
+      StationReadingsRaw
+      | project Timestamp = todatetime(Timestamp) + shift,
+                BikepointID = tostring(BikepointID),
+                No_Bikes = tolong(No_Bikes),
+                No_EBikes = tolong(No_EBikes),
+                No_Empty_Docks = tolong(No_Empty_Docks),
+                Status = tostring(Status)
+  ```
+
+  </details>
 
 ## Steps
 
@@ -24,10 +41,17 @@
 1. On the ontology's **Home** canvas, **click** **Ontology agent** in the ribbon. The chat opens on the right, in
    **Plan** mode (the toggle under the input box). Plan mode can query and propose, but never changes anything.
 
-2. **Send** the warm-up questions from `agent-texts.md`, one at a time:
-   - `Explain this ontology in five bullet points.`
-   - `Which crew services Kings Cross, and where is that crew based?`
-   - `Which stations are Full right now?`
+2. **Send** these warm-up questions, one at a time:
+
+   ```text
+   Explain this ontology in five bullet points.
+   ```
+   ```text
+   Which crew services Kings Cross, and where is that crew based?
+   ```
+   ```text
+   Which stations are Full right now?
+   ```
 
    For each answer, **expand** the query the agent shows.
 
@@ -60,7 +84,7 @@
    <summary>Troubleshooting — the answer is wrong or vague</summary>
 
    - **It includes Millbank**: the agent ignored the "more than 15 minutes" part. Ask *"Apply the Needs
-     rebalancing rule"* and check that the rule text matches the spec.
+     rebalancing rule"* and check that the rule text matches Lab 03 step 9.
    - **It lists every station**: it compared all readings instead of the latest one. Check the `StationReading`
      description ("Use the latest reading per station for "now" questions").
    - **Minutes are ~40–60 too high**: your data ended a while ago. Run **K3** and ask again.
@@ -78,7 +102,7 @@ keeps a separate list of maintenance tickets. Two of your "available" vans have 
 
    > ✅ Expected result: table `van_maintenance` with six rows (tickets `T-1001`–`T-1006`).
 
-5. **Back** in the ontology agent (still **Plan** mode), **send** the change request from `agent-texts.md`:
+5. **Back** in the ontology agent (still **Plan** mode), **send** this change request:
 
    ```text
    I uploaded a new table van_maintenance to BikeOpsLakehouse. Add an entity type called VanMaintenanceTicket bound to that table, with TicketId as the entity type key and all columns as properties. Add a relationship type hasTicket from Van (VanId) to VanMaintenanceTicket (VanId). Then change the business rule "Dispatchable van" to: A van can be dispatched when its VanStatus is Available and it has no Open maintenance ticket with Severity High. Link the rule to Van and VanMaintenanceTicket. Show me the plan first.

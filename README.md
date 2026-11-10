@@ -80,11 +80,11 @@ otherwise **OK**. Refill target: half full.
 
 | Path | What's in it |
 |---|---|
-| [`labs/`](labs/) | The seven attendee labs |
+| [`labs/`](labs/) | The seven attendee labs. Self-contained: every name, text, question and KQL block is in the lab itself |
 | [`data/`](data/) | The seven CSV files attendees upload |
-| [`artifacts/ontology-spec.md`](artifacts/ontology-spec.md) | Every entity type, binding, key, relationship, description and rule, to copy from |
-| [`artifacts/BikeOpsEventhouse.kql`](artifacts/BikeOpsEventhouse.kql) | All KQL (K1–K8) |
-| [`artifacts/agent-texts.md`](artifacts/agent-texts.md) | Questions, change request, agent instructions, and the **answer key** |
+| [`artifacts/ontology-spec.md`](artifacts/ontology-spec.md) | Facilitator reference: the whole ontology on one page (the labs contain everything attendees type) |
+| [`artifacts/BikeOpsEventhouse.kql`](artifacts/BikeOpsEventhouse.kql) | Facilitator reference: all KQL in one file (K1–K8; the labs contain the blocks they use) |
+| [`artifacts/agent-texts.md`](artifacts/agent-texts.md) | Facilitator reference: all questions and agent instructions, plus the **answer key** |
 | [`docs/IQRedo-slides.pdf`](docs/IQRedo-slides.pdf) | Slides for the kick-off, the theory before each lab and the wrap-up (22 slides) |
 | [`docs/facilitator-guide.md`](docs/facilitator-guide.md) | Talk track, timing, room management, risks and fallbacks, dry-run checklist |
 | [`docs/prerequisites.md`](docs/prerequisites.md) | Tenant, capacity and attendee checklist |
