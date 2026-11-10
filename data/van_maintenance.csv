@@ -1,0 +1,7 @@
+TicketId,VanId,OpenedOn,Issue,Severity,TicketStatus,ExpectedFixedOn
+T-1001,V02,2026-11-09T16:20:00Z,Tail-lift hydraulic leak,High,Open,2026-11-12T12:00:00Z
+T-1002,V09,2026-11-10T05:10:00Z,Brake warning light on,High,Open,2026-11-11T09:00:00Z
+T-1003,V04,2026-11-02T08:00:00Z,Bike rack strap worn,Low,Closed,2026-11-03T10:00:00Z
+T-1004,V06,2026-11-08T13:45:00Z,Rear camera intermittent,Medium,Open,2026-11-13T17:00:00Z
+T-1005,V03,2026-10-28T11:30:00Z,Tyre pressure low,Low,Closed,2026-10-28T15:00:00Z
+T-1006,V08,2026-11-10T06:40:00Z,Loose bike rack bolt,Low,Open,2026-11-10T14:00:00Z

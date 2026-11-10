@@ -1,0 +1,11 @@
+VanId,Registration,CrewId,DepotName,BikeCapacity,VanStatus
+V01,LX24 BKE,C01,Kings Cross Depot,20,Available
+V02,LX24 BKF,C01,Kings Cross Depot,20,Available
+V03,LX23 RVR,C02,Southwark Depot,24,Available
+V04,LX23 CTY,C03,Liverpool Street Depot,18,Available
+V05,LX25 CTZ,C03,Liverpool Street Depot,18,InService
+V06,LX22 WST,C04,Paddington Depot,20,Available
+V07,LX24 EST,C05,Canary Wharf Depot,24,InService
+V08,LX25 ESU,C05,Canary Wharf Depot,24,Available
+V09,LX22 NGT,C06,Waterloo Depot,16,Available
+V10,LX23 NGU,C06,Waterloo Depot,16,InService

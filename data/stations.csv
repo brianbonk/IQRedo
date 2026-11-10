@@ -1,0 +1,73 @@
+BikepointID,StationName,Street,Neighbourhood,Latitude,Longitude,Capacity,HasEBikeCharging,InstalledYear
+BP-001,"York Way, Kings Cross",York Way,Kings Cross,51.527436,-0.127995,27,false,2021
+BP-002,"Caledonian Road, Kings Cross",Caledonian Road,Kings Cross,51.532343,-0.12955,36,false,2011
+BP-003,"Argyle Street, Kings Cross",Argyle Street,Kings Cross,51.52942,-0.132325,36,true,2013
+BP-004,"Pancras Road, Kings Cross",Pancras Road,Kings Cross,51.52725,-0.128836,15,true,2014
+BP-005,"Goods Way, Kings Cross",Goods Way,Kings Cross,51.535168,-0.122741,15,false,2023
+BP-006,"Wharf Road, Kings Cross",Wharf Road,Kings Cross,51.533643,-0.116499,24,false,2018
+BP-007,"Upper Street, Islington",Upper Street,Islington,51.533347,-0.102296,36,true,2013
+BP-008,"Essex Road, Islington",Essex Road,Islington,51.539084,-0.103117,24,false,2018
+BP-009,"Liverpool Road, Islington",Liverpool Road,Islington,51.537391,-0.096136,27,true,2014
+BP-010,"Cross Street, Islington",Cross Street,Islington,51.532918,-0.100179,20,false,2010
+BP-011,"Duncan Terrace, Islington",Duncan Terrace,Islington,51.539167,-0.095906,24,true,2015
+BP-012,"Danbury Street, Islington",Danbury Street,Islington,51.539994,-0.098593,18,true,2024
+BP-013,"Sumner Street, Bankside",Sumner Street,Bankside,51.508702,-0.092565,15,true,2022
+BP-014,"Southwark Street, Bankside",Southwark Street,Bankside,51.511302,-0.092437,24,false,2013
+BP-015,"Hopton Street, Bankside",Hopton Street,Bankside,51.511654,-0.098243,15,true,2024
+BP-016,"Park Street, Bankside",Park Street,Bankside,51.511508,-0.099936,27,true,2017
+BP-017,"Bear Gardens, Bankside",Bear Gardens,Bankside,51.509488,-0.104391,24,false,2015
+BP-018,"Emerson Street, Bankside",Emerson Street,Bankside,51.504173,-0.096553,24,false,2016
+BP-019,"Borough High Street, Borough",Borough High Street,Borough,51.503865,-0.093846,36,true,2020
+BP-020,"Long Lane, Borough",Long Lane,Borough,51.50483,-0.089518,18,true,2011
+BP-021,"Great Dover Street, Borough",Great Dover Street,Borough,51.50127,-0.099111,24,true,2023
+BP-022,"Tabard Street, Borough",Tabard Street,Borough,51.500867,-0.098365,36,false,2015
+BP-023,"Trinity Street, Borough",Trinity Street,Borough,51.503223,-0.095192,15,true,2024
+BP-024,"Marshalsea Road, Borough",Marshalsea Road,Borough,51.499193,-0.090559,40,true,2016
+BP-025,"High Holborn, Holborn",High Holborn,Holborn,51.51386,-0.124144,24,true,2019
+BP-026,"Kingsway, Holborn",Kingsway,Holborn,51.515391,-0.112017,20,true,2017
+BP-027,"Southampton Row, Holborn",Southampton Row,Holborn,51.517351,-0.123941,24,true,2016
+BP-028,"Theobalds Road, Holborn",Theobalds Road,Holborn,51.513492,-0.116874,27,true,2018
+BP-029,"Red Lion Street, Holborn",Red Lion Street,Holborn,51.515605,-0.117995,36,false,2016
+BP-030,"Lambs Conduit Street, Holborn",Lambs Conduit Street,Holborn,51.514126,-0.114883,27,true,2018
+BP-031,"Great Eastern Street, Shoreditch",Great Eastern Street,Shoreditch,51.52339,-0.077848,18,true,2016
+BP-032,"Old Street, Shoreditch",Old Street,Shoreditch,51.523091,-0.072846,20,false,2018
+BP-033,"Curtain Road, Shoreditch",Curtain Road,Shoreditch,51.529134,-0.08267,36,false,2018
+BP-034,"Rivington Street, Shoreditch",Rivington Street,Shoreditch,51.529569,-0.07263,20,true,2010
+BP-035,"Hoxton Square, Shoreditch",Hoxton Square,Shoreditch,51.524744,-0.075033,24,true,2020
+BP-036,"Charlotte Road, Shoreditch",Charlotte Road,Shoreditch,51.527789,-0.073352,36,true,2012
+BP-037,"Marylebone High Street, Marylebone",Marylebone High Street,Marylebone,51.524164,-0.149772,30,true,2020
+BP-038,"Baker Street, Marylebone",Baker Street,Marylebone,51.518033,-0.148834,30,true,2012
+BP-039,"George Street, Marylebone",George Street,Marylebone,51.518202,-0.147571,15,true,2016
+BP-040,"Dorset Street, Marylebone",Dorset Street,Marylebone,51.517833,-0.158053,15,true,2017
+BP-041,"Wigmore Street, Marylebone",Wigmore Street,Marylebone,51.522861,-0.151739,36,true,2023
+BP-042,"Paddington Street, Marylebone",Paddington Street,Marylebone,51.515321,-0.148066,30,true,2019
+BP-043,"Bayswater Road, Hyde Park",Bayswater Road,Hyde Park,51.511571,-0.169401,36,true,2012
+BP-044,"Park Lane, Hyde Park",Park Lane,Hyde Park,51.503309,-0.159903,24,true,2023
+BP-045,"Serpentine Road, Hyde Park",Serpentine Road,Hyde Park,51.505198,-0.171795,36,true,2011
+BP-046,"Kensington Gore, Hyde Park",Kensington Gore,Hyde Park,51.504467,-0.1612,18,false,2018
+BP-047,"Exhibition Road, Hyde Park",Exhibition Road,Hyde Park,51.508749,-0.161008,36,true,2011
+BP-048,"Lancaster Gate, Hyde Park",Lancaster Gate,Hyde Park,51.505207,-0.169171,15,true,2011
+BP-049,"Westferry Circus, Canary Wharf",Westferry Circus,Canary Wharf,51.503962,-0.015284,24,true,2013
+BP-050,"South Colonnade, Canary Wharf",South Colonnade,Canary Wharf,51.506491,-0.014602,30,true,2023
+BP-051,"Montgomery Square, Canary Wharf",Montgomery Square,Canary Wharf,51.507769,-0.017033,18,true,2019
+BP-052,"Bank Street, Canary Wharf",Bank Street,Canary Wharf,51.509398,-0.025937,36,false,2015
+BP-053,"Upper Bank Street, Canary Wharf",Upper Bank Street,Canary Wharf,51.502668,-0.017252,18,true,2010
+BP-054,"Cabot Square, Canary Wharf",Cabot Square,Canary Wharf,51.502789,-0.012595,24,false,2021
+BP-055,"Whitechapel Road, Whitechapel",Whitechapel Road,Whitechapel,51.521292,-0.058123,36,true,2020
+BP-056,"Commercial Road, Whitechapel",Commercial Road,Whitechapel,51.516613,-0.053169,15,false,2016
+BP-057,"Cannon Street Road, Whitechapel",Cannon Street Road,Whitechapel,51.515569,-0.05489,30,false,2016
+BP-058,"New Road, Whitechapel",New Road,Whitechapel,51.519627,-0.057066,20,true,2021
+BP-059,"Fieldgate Street, Whitechapel",Fieldgate Street,Whitechapel,51.520065,-0.056705,40,true,2018
+BP-060,"Vallance Road, Whitechapel",Vallance Road,Whitechapel,51.514849,-0.054141,36,true,2014
+BP-061,"Waterloo Road, Waterloo",Waterloo Road,Waterloo,51.508448,-0.112513,40,true,2015
+BP-062,"The Cut, Waterloo",The Cut,Waterloo,51.505261,-0.111002,18,true,2019
+BP-063,"Baylis Road, Waterloo",Baylis Road,Waterloo,51.501088,-0.110784,24,true,2013
+BP-064,"Lower Marsh, Waterloo",Lower Marsh,Waterloo,51.506153,-0.111774,27,true,2018
+BP-065,"York Road, Waterloo",York Road,Waterloo,51.500825,-0.107382,30,true,2016
+BP-066,"Stamford Street, Waterloo",Stamford Street,Waterloo,51.49933,-0.116684,30,false,2019
+BP-067,"Whitehall, Westminster",Whitehall,Westminster,51.498699,-0.123595,30,false,2011
+BP-068,"Victoria Street, Westminster",Victoria Street,Westminster,51.502403,-0.132237,18,true,2012
+BP-069,"Great Smith Street, Westminster",Great Smith Street,Westminster,51.495436,-0.135528,36,false,2014
+BP-070,"Horseferry Road, Westminster",Horseferry Road,Westminster,51.496866,-0.138568,36,true,2012
+BP-071,"Millbank, Westminster",Millbank,Westminster,51.496125,-0.131079,36,true,2018
+BP-072,"Tothill Street, Westminster",Tothill Street,Westminster,51.495762,-0.13145,30,true,2010

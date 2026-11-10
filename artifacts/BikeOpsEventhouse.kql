@@ -1,0 +1,72 @@
+// BikeOpsEventhouse.kql
+// All KQL used in IQRedo. Run in the queryset BikeOpsEventhouse_queryset, database BikeOpsEventhouse.
+//
+// The KQL editor runs ONE block at a time: the block your cursor is in, delimited by blank lines.
+// Click inside a block, then Run (or Shift+Enter).
+
+// ---------------------------------------------------------------------------------------------
+// Lab 01: check the upload, then rebase the readings to "now"
+// ---------------------------------------------------------------------------------------------
+
+// K1: did the upload land with the right types? Expect 12960 rows, 72 stations, Timestamp as datetime.
+StationReadingsRaw
+| summarize Rows = count(), Stations = dcount(BikepointID), Oldest = min(Timestamp), Newest = max(Timestamp)
+
+// K2: column types (Timestamp must be datetime, the counts long or int)
+StationReadingsRaw
+| getschema
+| project ColumnName, ColumnType
+
+// K3: create StationReadings with the same 3 hours of data, shifted so the newest reading is "now".
+// The ontology, the agents and every question in the labs use StationReadings, never the raw table.
+// Run it again any time (for example at the start of the session if you did Lab 01 the day before):
+// it replaces the table with a freshly rebased copy.
+.set-or-replace StationReadings <|
+    let shift = now() - toscalar(StationReadingsRaw | summarize max(todatetime(Timestamp)));
+    StationReadingsRaw
+    | project Timestamp = todatetime(Timestamp) + shift,
+              BikepointID = tostring(BikepointID),
+              No_Bikes = tolong(No_Bikes),
+              No_EBikes = tolong(No_EBikes),
+              No_Empty_Docks = tolong(No_Empty_Docks),
+              Status = tostring(Status)
+
+// K4: the current state per status. Expect OK 43, Full 13, Low 11, Empty 5.
+StationReadings
+| summarize arg_max(Timestamp, *) by BikepointID
+| summarize Stations = count() by Status
+
+// K5: the answer key for the session's "hero" question, written in plain KQL. Keep it: in Labs 05-06 you
+// compare the agents' answers with it. Stations that are Empty now, and for how long.
+StationReadings
+| summarize LastNotEmpty = maxif(Timestamp, Status != "Empty"), arg_max(Timestamp, Status, No_Bikes) by BikepointID
+| where Status == "Empty"
+| extend EmptyMinutes = datetime_diff('minute', Timestamp, LastNotEmpty)
+| order by EmptyMinutes desc
+
+// ---------------------------------------------------------------------------------------------
+// Lab 07: simulate a new incident for the operations agent
+// ---------------------------------------------------------------------------------------------
+
+// Run K3 first, so the data ends "now" again, then K6a and K6b.
+// The incident: Bayswater Road, Hyde Park (BP-043) has been empty for the last 12 minutes.
+
+// K6a: remove BP-043's normal readings for the last 12 minutes (so there's one reading per minute)
+.delete table StationReadings records <| StationReadings | where BikepointID == "BP-043" and Timestamp > ago(12m)
+
+// K6b: append 12 one-minute "Empty" readings ending now
+.set-or-append StationReadings <|
+    range i from 0 to 11 step 1
+    | project Timestamp = now() - i * 1m, BikepointID = "BP-043", No_Bikes = long(0), No_EBikes = long(0),
+              No_Empty_Docks = long(36), Status = "Empty"
+
+// K7: confirm the incident is in the data
+StationReadings
+| where BikepointID == "BP-043"
+| top 15 by Timestamp desc
+
+// ---------------------------------------------------------------------------------------------
+// Clean-up helpers
+// ---------------------------------------------------------------------------------------------
+
+// K8: undo the simulated incident: re-run K3. It rebuilds StationReadings from the raw upload.

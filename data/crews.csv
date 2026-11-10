@@ -1,0 +1,7 @@
+CrewId,CrewName,Shift,VanCapacity,HomeDepot,Supervisor
+C01,North Loop,Morning,20,Kings Cross Depot,Amira Patel
+C02,River Run,Morning,24,Southwark Depot,Tom Okafor
+C03,City Sweep,Morning,18,Liverpool Street Depot,Grace Lindqvist
+C04,West Wheels,Afternoon,20,Paddington Depot,Marco Rossi
+C05,East Docks,Afternoon,24,Canary Wharf Depot,Hannah Wu
+C06,Night Owls,Night,16,Waterloo Depot,Liam Byrne

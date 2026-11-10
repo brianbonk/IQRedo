@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14">
+  <rect width="880" height="380" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <g stroke="#444" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <line x1="150" y1="80" x2="268" y2="80"/>
+    <line x1="420" y1="80" x2="538" y2="80"/>
+    <line x1="640" y1="80" x2="728" y2="80"/>
+    <line x1="560" y1="250" x2="595" y2="105"/>
+    <line x1="640" y1="250" x2="760" y2="105"/>
+    <line x1="85" y1="105" x2="85" y2="228"/>
+    <line x1="560" y1="300" x2="560" y2="318"/>
+  </g>
+  <g fill="#444" font-size="13" font-style="italic">
+    <text x="172" y="70">locatedIn</text>
+    <text x="440" y="70">servicedBy</text>
+    <text x="655" y="70">basedAt</text>
+    <text x="500" y="190">assignedTo</text>
+    <text x="705" y="190">parkedAt</text>
+    <text x="95" y="175">hasReading</text>
+    <text x="575" y="315">hasTicket (Lab 05)</text>
+  </g>
+  <g stroke-width="1.6">
+    <rect x="20" y="55" width="130" height="50" rx="8" fill="#e6f0fb" stroke="#2b6cb0"/>
+    <rect x="270" y="55" width="150" height="50" rx="8" fill="#e6f0fb" stroke="#2b6cb0"/>
+    <rect x="540" y="55" width="100" height="50" rx="8" fill="#e6f0fb" stroke="#2b6cb0"/>
+    <rect x="730" y="55" width="120" height="50" rx="8" fill="#e6f0fb" stroke="#2b6cb0"/>
+    <rect x="520" y="250" width="120" height="50" rx="8" fill="#e6f0fb" stroke="#2b6cb0"/>
+    <rect x="10" y="230" width="150" height="50" rx="8" fill="#fdf0e1" stroke="#c05621"/>
+    <rect x="480" y="320" width="200" height="50" rx="8" fill="#ffffff" stroke="#2b6cb0" stroke-dasharray="5,4"/>
+  </g>
+  <g fill="#1a202c" font-weight="600" text-anchor="middle">
+    <text x="85" y="78">Station</text>
+    <text x="345" y="78">Neighbourhood</text>
+    <text x="590" y="78">Crew</text>
+    <text x="790" y="78">Depot</text>
+    <text x="580" y="273">Van</text>
+    <text x="85" y="253">StationReading</text>
+    <text x="580" y="343">VanMaintenanceTicket</text>
+  </g>
+  <g fill="#4a5568" font-size="12" text-anchor="middle">
+    <text x="85" y="96">key BikepointID</text>
+    <text x="345" y="96">key NeighbourhoodName</text>
+    <text x="590" y="96">key CrewId</text>
+    <text x="790" y="96">key DepotName</text>
+    <text x="580" y="291">key VanId</text>
+    <text x="85" y="271">Eventhouse, no key</text>
+    <text x="580" y="361">key TicketId</text>
+  </g>
+  <g font-size="12" fill="#4a5568">
+    <rect x="250" y="210" width="14" height="14" fill="#e6f0fb" stroke="#2b6cb0"/>
+    <text x="270" y="222">Lakehouse table (graph-eligible)</text>
+    <rect x="250" y="235" width="14" height="14" fill="#fdf0e1" stroke="#c05621"/>
+    <text x="270" y="247">Eventhouse table (live readings)</text>
+  </g>
+</svg>

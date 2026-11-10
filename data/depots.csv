@@ -1,0 +1,7 @@
+DepotName,Area,Latitude,Longitude,BikeStorageCapacity,OpenHours
+Kings Cross Depot,Kings Cross,51.532,-0.124,120,05:00-23:00
+Southwark Depot,Southwark,51.5035,-0.104,90,05:00-23:00
+Liverpool Street Depot,City of London,51.518,-0.081,80,05:00-22:00
+Paddington Depot,Paddington,51.516,-0.177,100,06:00-22:00
+Canary Wharf Depot,Canary Wharf,51.504,-0.019,110,05:00-23:00
+Waterloo Depot,Waterloo,51.503,-0.113,70,00:00-24:00

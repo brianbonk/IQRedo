@@ -1,0 +1,13 @@
+NeighbourhoodName,Borough,Zone,Priority,CrewId
+Kings Cross,Camden,Central,Tier 1,C01
+Islington,Islington,Inner,Tier 2,C01
+Bankside,Southwark,Central,Tier 1,C02
+Borough,Southwark,Inner,Tier 2,C02
+Holborn,Camden,Central,Tier 1,C03
+Shoreditch,Hackney,Inner,Tier 2,C03
+Marylebone,Westminster,Central,Tier 2,C04
+Hyde Park,Westminster,Central,Tier 2,C04
+Canary Wharf,Tower Hamlets,Inner,Tier 1,C05
+Whitechapel,Tower Hamlets,Inner,Tier 2,C05
+Waterloo,Lambeth,Central,Tier 1,C06
+Westminster,Westminster,Central,Tier 1,C06
