@@ -85,6 +85,7 @@ otherwise **OK**. Refill target: half full.
 | [`artifacts/ontology-spec.md`](artifacts/ontology-spec.md) | Every entity type, binding, key, relationship, description and rule, to copy from |
 | [`artifacts/BikeOpsEventhouse.kql`](artifacts/BikeOpsEventhouse.kql) | All KQL (K1–K8) |
 | [`artifacts/agent-texts.md`](artifacts/agent-texts.md) | Questions, change request, agent instructions, and the **answer key** |
+| [`docs/IQRedo-slides.pdf`](docs/IQRedo-slides.pdf) | Slides for the kick-off, the theory before each lab and the wrap-up (22 slides) |
 | [`docs/facilitator-guide.md`](docs/facilitator-guide.md) | Talk track, timing, room management, risks and fallbacks, dry-run checklist |
 | [`docs/prerequisites.md`](docs/prerequisites.md) | Tenant, capacity and attendee checklist |
 | [`tools/generate_data.py`](tools/generate_data.py) | Regenerates `data/` (standard-library Python). Not needed to run the session. |

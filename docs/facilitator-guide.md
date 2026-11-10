@@ -44,6 +44,8 @@ session once, as an attendee, in a fresh workspace on **the capacity the room wi
 
 ### Kick-off (10 min, before Lab 01)
 
+Slides: [`IQRedo-slides.pdf`](IQRedo-slides.pdf) (kick-off, one or two slides before each lab, wrap-up). The beats below match them.
+
 Keep it short; the labs carry the content. Suggested beats:
 
 1. **The gap** (2 min). Show the K5 result from Lab 01: five rows, `BikepointID` and `EmptyMinutes`. Ask the room:
